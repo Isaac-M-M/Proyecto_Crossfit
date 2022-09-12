@@ -5,7 +5,7 @@
 }
 
 :root{
-    --bg-color:#dcf4f9;
+    /* --bg-color:#780000; */
     --menu-color:#003049;
     --select-menu-color:#FDF0D5;
     --submenu-color:#669BBC;
@@ -28,6 +28,7 @@
         background-color: var(--bg-color);
         width: 100%;
         height: 10vh;
+        color: var(--select-menu-color);
     }
 
     #barras{
@@ -86,7 +87,6 @@
     }
 
     #hamburguesa li ul li{
-
         border-bottom: 1px solid var(--select-menu-color);
     }
 
@@ -96,9 +96,7 @@
         border-bottom: none;
     }
 
-    #hamburguesa li ul li ul a{
-        text-align: left;
-    }
+
 
     .menu-fixed {
         position:fixed;
@@ -109,6 +107,192 @@
         box-shadow:0px 4px 3px rgba(0,0,0,.5);
  
     }
+
+    /* SECCION */
+
+    body{
+        background-color: var(--bg-color);
+    }
+
+
+    
+    #cajaPrincipal{
+        width: 95%;
+        height: max-content;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 2vh;
+        box-shadow:0px 0px 13px rgba(0,0,0,.5);
+        border-radius: 2em;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+        #cajaCabecera{
+            width: 100%;
+            height: 30vh;
+            /* border: 1px solid black; */
+            
+        }
+
+        #cajaCabecera h1{
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            margin-top: 1em;
+            animation: titulo infinite alternate 3s;
+        }
+
+        @keyframes titulo {
+            from{
+                text-shadow: none;
+            }
+            to{
+                text-shadow: 0px 0px 10px rgba(0, 48, 73,.7);
+            }
+            
+        }
+
+        #cajaCabecera img{
+            display: block;
+            position: absolute;
+            width: 7%;
+            top: 7em;
+            left: 20em;
+        }
+        #cajaContenido{
+            width: 70%;
+            height: max-content;
+            /* border: 1px solid black; */
+            padding: 10px;
+        }
+        .contenidoContenedor{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 2em;
+            /* border: 1px solid black; */
+        }
+        .contenidoContenedor img{
+            width: 30%;
+            height: 25%;
+            margin: 2em;
+        }
+        .contenidoTexto{
+            margin: 1em;
+        }
+        .contenidoTexto h2{
+            margin: .5em;
+        }
+
+        #cajaLateral{
+            width: 30%;
+            height: max-content;
+            /* border: 1px solid black; */
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #cajaLateral .contenedorLateral{
+           width: 95%;
+           height: 40vh;
+           margin: 1em;
+
+           /* border: 1px solid black; */
+
+            
+        }
+        .contenedorLogin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3em;
+        }
+
+        #formulario{
+            margin: 12em;
+        }
+        #formulario input{
+            margin: .5em;
+        }
+        #formulario #textoCheckBox{
+            font-size: .9em;
+        }
+        #formulario input[type="submit"]{
+            margin-left:40%;
+        }
+
+       #publi{
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        /* box-shadow: 4px 0px 10px #444; */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+
+      #publi p{
+ 
+        animation: publi infinite alternate 1s;
+      }
+
+      #publi a{
+        text-decoration: none;
+        color: #444;
+      }
+
+      @keyframes publi {
+        from{
+            scale: 1;
+        }
+        to{
+            scale:1.5;
+        }
+        
+      }
+
+      .contenedorNoticias{
+        height: fit-content;
+      }
+      #noticias{
+        padding: 2em;
+        height: max-content;
+        overflow: hidden;
+      }
+      #noticias ul{
+        list-style: none;
+      }
+      #noticias li{
+        margin: 1.5em;
+      }
+      #noticias a{
+        color: #444;
+        
+      }
+
+        /* FOOTER  */
+
+        #footer{
+            width: 100%;
+            height: 20vh;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: var(--menu-color);
+            color: var(--select-menu-color);
+            margin-top: 2em;
+            border-top-right-radius: 2em;
+            border-top-left-radius: 2em;
+            box-shadow:1px 0px 13px rgba(0,0,0,1);
+        }
 
 @media (max-width:700px) {
    

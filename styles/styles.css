@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color:#dcf4f9;
+    --menu-color:#003049;
+    --select-menu-color:#FDF0D5;
+    --submenu-color:#669BBC;
+}
+
+    
+
+    html{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1{
+        text-align: center;
+    }
+    body{
+        height:1200px;
+    }
+    header{
+        padding-top: 3vh;
+        background-color: var(--bg-color);
+        width: 100%;
+        height: 10vh;
+    }
+
+    #barras{
+        display: none;
+    }
+    .fa-chevron-right{
+       display: none;
+    }
+
+    #hamburguesa{
+        width: 100%;
+        height: 6vh;
+        background-color: var(--menu-color);
+        list-style: none;
+        top: 0;
+        box-shadow:0px 4px 3px rgba(0,0,0,.5);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap:wrap ;
+        
+    }
+
+    #hamburguesa li{
+        width: 100%;
+        height: 6vh;
+        transition: all 300ms;
+        cursor: pointer;
+        position: relative;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #hamburguesa li a{
+        text-decoration: none;
+        color: var(--select-menu-color);
+        letter-spacing: .1em;
+    }
+
+    #hamburguesa li:hover >a{
+        scale: 1.2;
+    }
+
+    #hamburguesa li ul{
+        width: 12rem;
+        min-width: max-content;
+        position: absolute;
+        top: 6vh;
+
+        background-color: var(--submenu-color);
+        box-shadow:0px 4px 3px rgba(0,0,0,.5);
+    }
+
+    #hamburguesa li ul li{
+
+        border-bottom: 1px solid var(--select-menu-color);
+    }
+
+
+    #hamburguesa li ul li:last-child{
+
+        border-bottom: none;
+    }
+
+    #hamburguesa li ul li ul a{
+        text-align: left;
+    }
+
+    .menu-fixed {
+        position:fixed;
+        z-index:1000;
+        top:0;
+        max-width:1000px;
+        width:100%;
+        box-shadow:0px 4px 3px rgba(0,0,0,.5);
+ 
+    }
+
+@media (max-width:700px) {
+   
+    h1{
+        text-align: center;
+    }
+    header{
+        padding-top: 3%;
+        background-color: var(--bg-color);
+        width: 100%;
+        height: 10vh;
+    }
+
+    .menuHamburguesa{
+        width: 100%;
+        height: 6vh;
+        background-color: var(--menu-color);
+        display: block;
+        position: relative;
+        padding-left: 1.5em;
+        padding-top: .5em;
+        box-shadow:0px 4px 3px rgba(0,0,0,.5);
+    }
+
+    .barsContent{
+        display: block;
+        width: fit-content;
+    }
+    .fa-bars{
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    #hamburguesa{
+        width: 70%;
+        height: calc(100vh - 16vh);
+        background-color: var(--menu-color);
+        list-style: none;
+        overflow: hidden;
+        box-shadow:0px 4px 3px rgba(0,0,0,.5);
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap; 
+        translate: -100%;
+        transition: ease-in-out 300ms;
+        
+    }
+
+    #barras{
+
+        display: block;
+        color: var(--select-menu-color);
+    }
+    #hamburguesa li{
+        display: block;
+        width: 1000px;
+        height: 100%;
+        padding: 1em;
+        padding-left: 2em;
+        transition: all 300ms;
+
+    }
+    #hamburguesa li:hover{
+        cursor: pointer;
+        background-color: var(--select-menu-color);
+    }
+    #hamburguesa li >a{
+        text-decoration: none;
+        color: var(--select-menu-color);
+    }
+    #hamburguesa li:hover >a{
+        color: var(--menu-color);
+    }
+
+
+    .fa-chevron-right{
+        display: block;
+        position: static;
+        margin-left: 37%;
+        margin-top: -2%;
+        left: 85%;
+        color: var(--select-menu-color);
+    }
+    #hamburguesa li:hover .fa-chevron-right{
+        color: var(--menu-color);
+    }
+
+    #hamburguesa li ul{
+        width: 130%;
+        list-style: none;
+        background-color: var(--submenu-color);
+        position: relative;
+        top: 1em;
+        left: -35px;
+        
+    }
+
+    #hamburguesa li ul li{
+        display: block;
+        width: 100em;
+        padding-left: 4em;
+    }
+    #hamburguesa li ul li:hover{
+        background-color: var(--select-menu-color);
+    } 
+}

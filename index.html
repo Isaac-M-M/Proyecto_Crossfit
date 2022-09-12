@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossfit</title>
+    <script src="https://kit.fontawesome.com/374de499b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="jquery/jquery-1.12.4.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            //MENÚ PEGAJOSO
+
+            var altura = $('#hamburguesa').offset().top;
+
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() > altura) {
+                    $('#hamburguesa').addClass('menu-fixed');
+                } else {
+                    $('#hamburguesa').removeClass('menu-fixed');
+                }
+            });
+
+            //al hacer click en las barras aparece el menú
+            var contador = 1;
+
+
+            $(".barsContent").click(function () {
+                if (contador == 1) {
+                    $("#hamburguesa").css("translate", "0");
+                    contador = 0;
+                } else {
+                    $("#hamburguesa").css("translate", "-100%");
+                    contador = 1;
+
+                }
+
+
+            })
+
+
+            //al hacer click en media se desplega el submenú
+            $(".sublistaMedia1").hide();
+            $("#media").click(function () {
+                $(".sublistaMedia1").fadeToggle(300);
+
+            })
+
+            $(".sublistaMedia2").hide();
+            $("#sublistaEventos").click(function () {
+                $(".sublistaMedia2").fadeToggle(300);
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenid@</h1>
+    </header>
+    <nav>
+
+        <div class="menuHamburguesa">
+            <div class="barsContent">
+                <i class="fa-solid fa-bars" id="barras"></i>
+            </div>
+        </div>
+        <ul id="hamburguesa">
+            <div class="listaNoticias lista">
+                <li><a href="#">Noticias</a></li>
+            </div>
+
+            <div class="listaEntrevistas lista">
+                <li><a href="#">Entrevistas</a></li>
+            </div>
+
+            <div class="listaWods lista">
+                <li><a href="#">Wod's</a></li>
+            </div>
+
+            <div class="listaMedia lista">
+                <li id="media" class="sublista"><a>Media</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <ul class="sublistaMedia1">
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Fotos</a></li>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="listaEventos lista">
+                <li class="sublista" id="sublistaEventos"><a href="#">Eventos</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <ul class="sublistaMedia2">
+                        <li><a href="#">Calendario</a></li>
+                        <li><a href="#">Próximos eventos</a></li>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="listaTienda lista">
+                <li><a href="#">Tienda</a></li>
+            </div>
+
+            <div class="listaContacto lista">
+                <li><a href="#">Contacto</a></li>
+            </div>
+        </ul>
+
+    </nav>
+    <section>
+
+    </section>
+</body>
+
+</html>
